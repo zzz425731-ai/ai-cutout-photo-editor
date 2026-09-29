@@ -1,0 +1,61 @@
+// core/icons.js — inline SVG icon set (24×24, stroke = currentColor). icon(name, size?) → svg string.
+
+const P = {
+  image: '<rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="m21 15.5-4.6-4.6a1.5 1.5 0 0 0-2.1 0L5 20"/>',
+  imagePlus: '<path d="M21 12v5.5a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5v-11A2.5 2.5 0 0 1 5.5 4H12"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="m21 15.5-4.6-4.6a1.5 1.5 0 0 0-2.1 0L5 20"/><path d="M18 2.5v6M15 5.5h6"/>',
+  folderOpen: '<path d="M4 20h13.2a2 2 0 0 0 1.9-1.4l1.8-6A1.5 1.5 0 0 0 19.5 10.6H8.3a2 2 0 0 0-1.9 1.4L4 20Zm0 0a1.5 1.5 0 0 1-1.5-1.5v-12A1.5 1.5 0 0 1 4 5h4.2l2 2.2h6.3A1.5 1.5 0 0 1 18 8.7v1.9"/>',
+  undo: '<path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/>',
+  redo: '<path d="m15 14 5-5-5-5"/><path d="M20 9H9.5a5.5 5.5 0 0 0 0 11H13"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  minus: '<path d="M5 12h14"/>',
+  fit: '<path d="M4 9V5.5A1.5 1.5 0 0 1 5.5 4H9M15 4h3.5A1.5 1.5 0 0 1 20 5.5V9M20 15v3.5a1.5 1.5 0 0 1-1.5 1.5H15M9 20H5.5A1.5 1.5 0 0 1 4 18.5V15"/>',
+  compare: '<rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M12 4h-6.5A2.5 2.5 0 0 0 3 6.5v11A2.5 2.5 0 0 0 5.5 20H12Z" fill="currentColor" fill-opacity=".22" stroke="none"/><path d="M12 2v20"/>',
+  save: '<path d="M12 3.5v11m0 0-4-4m4 4 4-4"/><path d="M4 15.5v2.5A2.5 2.5 0 0 0 6.5 20.5h11a2.5 2.5 0 0 0 2.5-2.5v-2.5"/>',
+  export: '<path d="M12 15V3.5m0 0-4 4m4-4 4 4"/><path d="M4 13.5v4.5a2.5 2.5 0 0 0 2.5 2.5h11a2.5 2.5 0 0 0 2.5-2.5v-4.5"/>',
+  chevronDown: '<path d="m6 9 6 6 6-6"/>',
+  chevronRight: '<path d="m9 6 6 6-6 6"/>',
+  cutout: '<path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="9.6" r="2.6"/><path d="M7.4 17.6c.8-2.3 2.5-3.6 4.6-3.6s3.8 1.3 4.6 3.6"/>',
+  background: '<path d="m12 3.5 8.5 4.6L12 12.7 3.5 8.1Z"/><path d="m3.5 12.1 8.5 4.6 8.5-4.6"/><path d="m3.5 16 8.5 4.6 8.5-4.6"/>',
+  idphoto: '<rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="9" cy="10.6" r="2"/><path d="M5.8 16.2c.6-1.5 1.7-2.2 3.2-2.2s2.6.7 3.2 2.2M15 10h3.5M15 13.5h2.5"/>',
+  adjust: '<path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/>',
+  beauty: '<path d="M11 3.5l1.6 4.3 4.4 1.7-4.4 1.6L11 15.5l-1.6-4.4L5 9.5l4.4-1.7Z"/><path d="M18 14l.8 2.1 2.2.9-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.9Z"/>',
+  crop: '<path d="M6 2.5V16a2 2 0 0 0 2 2h13.5"/><path d="M18 21.5V8a2 2 0 0 0-2-2H2.5"/>',
+  text: '<path d="M5 7V5h14v2M12 5v14M9 19h6"/>',
+  sticker: '<path d="M20.5 12.3V6.5a3 3 0 0 0-3-3h-11a3 3 0 0 0-3 3v11a3 3 0 0 0 3 3h5.8"/><path d="M20.5 12.3a8.2 8.2 0 0 1-8.2 8.2 3.8 3.8 0 0 0 3.8-3.8v-.6a3.8 3.8 0 0 1 3.8-3.8Z"/><path d="M8.5 13.5c.9 1 2 1.5 3.3 1.5"/><path d="M9 9h.01M15 9h.01" stroke-width="2.6"/>',
+  erase: '<path d="m7.5 20.5-4-4a1.5 1.5 0 0 1 0-2.1L13.4 4.5a1.5 1.5 0 0 1 2.1 0l4.9 4.9a1.5 1.5 0 0 1 0 2.1L11.5 20.5"/><path d="M7.5 20.5h13"/><path d="m8.6 9.3 6.2 6.2"/>',
+  mosaic: '<rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M9.2 3.5v17M14.8 3.5v17M3.5 9.2h17M3.5 14.8h17"/><path d="M3.5 6a2.5 2.5 0 0 1 2.5-2.5h3.2v5.7H3.5ZM14.8 9.2h5.7v5.6h-5.7ZM9.2 14.8h5.6v5.7H9.2Z" fill="currentColor" fill-opacity=".3" stroke="none"/>',
+  batch: '<rect x="7" y="7" width="14" height="14" rx="2.5"/><path d="M17 3H5.5A2.5 2.5 0 0 0 3 5.5V17"/><path d="m21 17-3.3-3.3a1.3 1.3 0 0 0-1.8 0L10 19.5"/><circle cx="12" cy="11.5" r="1.4"/>',
+  brush: '<path d="M18.4 2.8a2 2 0 0 1 2.8 2.8l-8.4 8.4-2.8-2.8Z"/><path d="M9.3 12.4c-2.3-.3-4.4 1.4-4.6 3.8-.1 1.3-.6 2.3-1.9 3 1.1.9 2.7 1.5 4.2 1.5 2.9 0 5.1-2.3 5-5.1"/>',
+  brushPlus: '<path d="M18.4 2.8a2 2 0 0 1 2.8 2.8l-8.4 8.4-2.8-2.8Z"/><path d="M9.3 12.4c-2.3-.3-4.4 1.4-4.6 3.8-.1 1.3-.6 2.3-1.9 3 1.1.9 2.7 1.5 4.2 1.5 2.9 0 5.1-2.3 5-5.1"/>',
+  eraser: '<path d="m7.5 20.5-4-4a1.5 1.5 0 0 1 0-2.1L13.4 4.5a1.5 1.5 0 0 1 2.1 0l4.9 4.9a1.5 1.5 0 0 1 0 2.1L11.5 20.5"/><path d="M7.5 20.5h13"/><path d="m8.6 9.3 6.2 6.2"/>',
+  wand: '<path d="m3.5 20.5 10-10"/><path d="m12 9 1.5-1.5 3 3L15 12"/><path d="M16 2.5v2.5M20.5 7H23M18.8 4.2l1.7-1.7M7 3.5V6M5.8 4.8H8.3M19.5 14.5V17M18.3 15.8h2.5"/>',
+  sparkles: '<path d="M10 3.5l1.5 4.2 4.2 1.5-4.2 1.5L10 15l-1.5-4.3-4.2-1.5 4.2-1.5Z"/><path d="M18 12.5l.9 2.3 2.3.9-2.3.9-.9 2.3-.9-2.3-2.3-.9 2.3-.9ZM17.5 3l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6Z"/>',
+  reset: '<path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1L3.5 8.5"/><path d="M3.5 3.5v5h5"/>',
+  close: '<path d="M18 6 6 18M6 6l12 12"/>',
+  check: '<path d="m5 12.5 4.5 4.5L19 7.5"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 16.5v-5M12 8h.01"/>',
+  alert: '<circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5h.01"/>',
+  success: '<circle cx="12" cy="12" r="9"/><path d="m8 12.3 2.7 2.7L16.2 9.5"/>',
+  folder: '<path d="M3.5 7A2 2 0 0 1 5.5 5h3.7l2 2.2h7.3a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2Z"/>',
+  eye: '<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/>',
+  trash: '<path d="M4 7h16M10 11v6M14 11v6M5.5 7l.9 11.6A2 2 0 0 0 8.4 20.5h7.2a2 2 0 0 0 2-1.9L18.5 7M9 7V4.5h6V7"/>',
+  hand: '<path d="M18 11.5V7a1.8 1.8 0 0 0-3.6 0v4M14.4 10V4.8a1.8 1.8 0 0 0-3.6 0V10M10.8 10.5V6.3a1.8 1.8 0 0 0-3.6 0v8"/><path d="M18 9.2a1.8 1.8 0 0 1 3.6 0V14a7.5 7.5 0 0 1-7.5 7.5h-1.8c-2.6 0-4.2-.8-5.6-2.2l-3.3-3.4a1.8 1.8 0 0 1 2.6-2.6L7.2 15"/>',
+  chip: '<rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9.5 2.5V6M14.5 2.5V6M9.5 18v3.5M14.5 18v3.5M2.5 9.5H6M2.5 14.5H6M18 9.5h3.5M18 14.5h3.5"/>',
+  wrench: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.4-3.4a6 6 0 0 1-7.9 7.9l-6.4 6.4a2.1 2.1 0 0 1-3-3l6.4-6.4a6 6 0 0 1 7.9-7.9Z"/>',
+  upload: '<path d="M12 15.5V4m0 0-4.5 4.5M12 4l4.5 4.5"/><path d="M4 15v3a2.5 2.5 0 0 0 2.5 2.5h11A2.5 2.5 0 0 0 20 18v-3"/>',
+  palette: '<path d="M12 3.5a8.5 8.5 0 1 0 0 17c1.2 0 1.8-.9 1.6-1.9-.2-1.2.6-2.1 1.8-2.1h2.2a3 3 0 0 0 2.9-3A8.5 8.5 0 0 0 12 3.5Z"/><circle cx="7.8" cy="11" r="1.2"/><circle cx="10.5" cy="7.3" r="1.2"/><circle cx="15" cy="7.8" r="1.2"/>',
+  person: '<circle cx="12" cy="7.5" r="3.5"/><path d="M5 20.5c.9-3.8 3.6-6 7-6s6.1 2.2 7 6"/>',
+  cube: '<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/>',
+  shadow: '<circle cx="10" cy="10" r="6"/><path d="M19.5 13.5A7.5 7.5 0 0 1 13.5 19.5" stroke-dasharray="1.5 2.5"/>',
+  outline: '<path d="M12 3.5 14.6 9l6 .7-4.4 4.1 1.2 5.9L12 16.8l-5.4 2.9 1.2-5.9-4.4-4.1 6-.7Z"/>',
+  keyboard: '<rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6.5 10h.01M10 10h.01M14 10h.01M17.5 10h.01M7.5 14h9"/>',
+  lock: '<rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/>',
+  logo: '<path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M12 7.2l1.3 3.5 3.5 1.3-3.5 1.3L12 16.8l-1.3-3.5-3.5-1.3 3.5-1.3Z" fill="currentColor"/>',
+};
+
+export function icon(name, size = 20, extra = '') {
+  const body = P[name] || P.info;
+  return `<svg class="ico" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ${extra}>${body}</svg>`;
+}
+
+export const ICONS = P;

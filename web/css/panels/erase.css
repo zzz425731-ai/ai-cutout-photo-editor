@@ -1,0 +1,26 @@
+/* 消除 panel */
+.er-intro {
+  display: flex; gap: 12px; align-items: center;
+  padding: 14px; margin-bottom: 6px; border-radius: 12px;
+  background: linear-gradient(135deg, #fff2f4 0%, #f6f1ff 100%);
+  border: 1px solid #f7dde3;
+}
+.er-art {
+  width: 44px; height: 44px; border-radius: 12px; flex: none; display: grid; place-items: center;
+  background: #fff; color: #e5364f; box-shadow: 0 2px 6px rgba(229, 54, 79, 0.14);
+}
+.er-title { font-size: 14px; font-weight: 600; }
+.er-sub { font-size: 12px; color: var(--text-3); line-height: 1.6; margin-top: 2px; }
+.er-actions { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+.er-run { box-shadow: 0 4px 14px rgba(52, 100, 240, 0.28); }
+.er-run[hidden] { display: none; }
+.er-status {
+  display: flex; align-items: center; gap: 6px; margin-top: 10px;
+  font-size: 13px; color: var(--success);
+}
+.er-status[hidden] { display: none; }
+.er-status .er-st-ico { display: inline-flex; }
+.er-status .er-st-meta { margin-left: auto; color: var(--text-3); font-size: 12px; font-variant-numeric: tabular-nums; }
+.er-tips { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.er-tips li { display: flex; gap: 8px; align-items: flex-start; font-size: 12px; line-height: 1.6; color: var(--text-2); }
+.er-tip-ico { flex: none; display: inline-flex; margin-top: 2px; color: var(--text-3); }

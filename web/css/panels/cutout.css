@@ -1,0 +1,49 @@
+/* 抠图 panel */
+.cut-intro {
+  display: flex; gap: 12px; align-items: center;
+  padding: 14px; margin-bottom: 16px; border-radius: 12px;
+  background: linear-gradient(135deg, #f1f5ff 0%, #f6f1ff 100%);
+  border: 1px solid #e3e9ff;
+}
+.ci-art {
+  width: 44px; height: 44px; border-radius: 12px; flex: none; display: grid; place-items: center;
+  background: #fff; color: var(--accent); box-shadow: 0 2px 6px rgba(52, 100, 240, 0.14);
+}
+.ci-title { font-size: 14px; font-weight: 600; }
+.ci-sub { font-size: 12px; color: var(--text-3); line-height: 1.6; margin-top: 2px; }
+.cut-run-wrap { margin-top: 14px; }
+.cut-run { box-shadow: 0 4px 14px rgba(52, 100, 240, 0.28); }
+.cut-run .btn-ico svg { width: 20px; height: 20px; }
+.cut-status {
+  display: flex; align-items: center; gap: 6px; margin-top: 10px;
+  font-size: 13px; color: var(--success);
+}
+.cut-status .cs-ico { display: inline-flex; }
+.cut-status .cs-meta { margin-left: auto; color: var(--text-3); font-size: 12px; font-variant-numeric: tabular-nums; }
+.brush-seg .seg-btn { height: 36px; }
+.brush-seg .seg-btn.on[data-value="keep"] { color: #16874a; }
+.brush-seg .seg-btn.on[data-value="erase"] { color: #d23a48; }
+.brush-done { height: 26px; padding: 0 8px; font-size: 12px; }
+.next-card {
+  display: flex; align-items: center; gap: 12px; width: 100%; text-align: left;
+  margin: 4px 0 6px; padding: 12px 12px 12px 14px; border-radius: 12px;
+  background: var(--accent-soft); border: 1px solid var(--accent-soft-2); color: var(--text);
+  transition: background 0.12s, border-color 0.12s, transform 0.12s;
+}
+.next-card:hover { background: #e4ebff; border-color: #c8d6ff; }
+.next-card .nc-ico {
+  width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; flex: none;
+  background: #fff; color: var(--accent);
+}
+.next-card .nc-text { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.next-card .nc-title { font-size: 14px; font-weight: 600; color: var(--accent-text); }
+.next-card .nc-sub { font-size: 12px; color: var(--text-3); }
+.next-card .nc-arrow { color: var(--accent); display: inline-flex; }
+.cut-reset { padding-top: 14px; }
+.cut-reset .row .btn { padding: 0 8px; }
+.cut-inspection .seg-btn { padding: 0 8px; min-width: 0; }
+.cut-inspection .seg-btn[data-value="black"] { border-bottom: 3px solid #20232a; }
+.cut-inspection .seg-btn[data-value="white"] { border-bottom: 3px solid #c9ced8; }
+.cut-inspection .seg-btn[data-value="green"] { border-bottom: 3px solid #36c960; }
+.cut-zoom { margin-top: 10px; }
+.cut-zoom .btn { flex: 1; }

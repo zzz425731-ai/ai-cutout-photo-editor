@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>单元测试 - AI抠图P图工具</title>
+<link rel="icon" href="data:,">
+<style>
+  body { font: 14px/1.6 "Microsoft YaHei UI", system-ui, sans-serif; margin: 0; padding: 24px 32px; color: #1d2129; background: #f4f5f7; }
+  h1 { font-size: 18px; margin: 0 0 12px; }
+  #summary { padding: 10px 14px; border-radius: 8px; background: #fff; border: 1px solid #e4e6eb; margin-bottom: 14px; font-weight: 600; }
+  #summary.good { color: #1f9d55; border-color: #bfe8cf; background: #effaf3; }
+  #summary.bad { color: #e5484d; border-color: #f6c5c7; background: #fdf0f0; }
+  #results { list-style: none; padding: 0; margin: 0; background: #fff; border-radius: 8px; border: 1px solid #e4e6eb; }
+  #results li { padding: 5px 14px; border-top: 1px solid #f0f1f4; display: flex; gap: 12px; }
+  #results li:first-child { border-top: 0; }
+  #results li.suite { font-weight: 700; background: #f7f8fa; }
+  #results li.pass { color: #1d2129; }
+  #results li.fail { color: #e5484d; background: #fff6f6; }
+  #results .ms { margin-left: auto; color: #b1b7c1; font-size: 12px; }
+</style>
+</head>
+<body>
+<h1>AI抠图P图工具 · 前端单元测试</h1>
+<div id="summary" data-done="0">正在运行…</div>
+<ul id="results"></ul>
+<script type="module" src="js/tests/run.js"></script>
+</body>
+</html>

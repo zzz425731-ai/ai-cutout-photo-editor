@@ -1,0 +1,46 @@
+/* 打码 panel */
+.mz-face {
+  padding: 14px; border-radius: 12px;
+  background: linear-gradient(135deg, #f1f5ff 0%, #f6f1ff 100%);
+  border: 1px solid #e3e9ff;
+}
+.mz-face-head { display: flex; gap: 12px; align-items: center; margin-bottom: 14px; }
+.mz-face-art {
+  width: 44px; height: 44px; border-radius: 12px; flex: none; display: grid; place-items: center;
+  background: #fff; color: var(--accent); box-shadow: 0 2px 6px rgba(52, 100, 240, 0.14);
+}
+.mz-face-title { font-size: 15px; font-weight: 600; }
+.mz-face-sub { font-size: 12px; color: var(--text-3); line-height: 1.6; margin-top: 2px; }
+.mz-face .seg { background: rgba(255, 255, 255, 0.7); box-shadow: inset 0 0 0 1px #e1e7fb; }
+.mz-face .ctl.slider { margin-top: 12px; }
+.mz-emojis { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; margin-top: 10px; }
+.mz-emoji {
+  height: 36px; border-radius: 8px; border: 1px solid transparent; background: rgba(255, 255, 255, 0.75);
+  font-size: 20px; line-height: 1; display: grid; place-items: center;
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+  transition: background 0.12s, border-color 0.12s, transform 0.12s;
+}
+.mz-emoji:hover { background: #fff; border-color: var(--border); }
+.mz-emoji.on { background: #fff; border-color: var(--accent); box-shadow: 0 0 0 2px var(--focus-ring, rgba(52, 100, 240, 0.25)); }
+.mz-face-run { margin-top: 14px; box-shadow: 0 4px 14px rgba(52, 100, 240, 0.28); }
+.mz-face-run .btn-ico svg { width: 20px; height: 20px; }
+.mz-face-status { display: flex; gap: 6px; align-items: flex-start; margin-top: 10px; font-size: 13px; }
+.mz-face-status .mz-fs-ico { display: inline-flex; margin-top: 1px; flex: none; }
+.mz-face-status .mz-fs-text { display: flex; flex-direction: column; min-width: 0; }
+.mz-face-status .mz-fs-sub { font-size: 12px; color: var(--text-3); line-height: 1.6; }
+.mz-face-status.ok { color: var(--success); }
+.mz-face-status.warn { color: var(--warning); }
+
+.mz-tools { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.mz-tool {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  height: 62px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface);
+  color: var(--text-2); font-size: 12px; transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+.mz-tool:hover { background: var(--hover); color: var(--text); }
+.mz-tool.on { border-color: var(--accent); background: var(--accent-soft); color: var(--accent-text); font-weight: 600; }
+.mz-tool.on .mz-tool-ico { color: var(--accent); }
+.mz-tool-ico { display: inline-flex; }
+.mz-tool-hint { margin: 8px 0 4px; }
+.mz-field { margin-top: 12px; }
+.mz-done { height: 26px; padding: 0 8px; font-size: 12px; }

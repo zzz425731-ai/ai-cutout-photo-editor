@@ -1,0 +1,76 @@
+/* 背景 panel */
+.bg-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.bg-tile {
+  display: flex; flex-direction: column; align-items: stretch; gap: 6px;
+  padding: 5px 5px 6px; border-radius: 10px; border: 1px solid var(--border);
+  background: var(--surface); transition: border-color 0.12s, box-shadow 0.12s, background 0.12s;
+}
+.bg-tile:hover { border-color: #c3c9d3; background: var(--surface-2); }
+.bg-tile.on { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 2px 8px rgba(52, 100, 240, 0.14); background: var(--accent-soft); }
+.bg-tile .bt-name { font-size: 12px; color: var(--text-2); text-align: center; line-height: 1.2; }
+.bg-tile.on .bt-name { color: var(--accent-text); font-weight: 600; }
+.bt-prev {
+  display: grid; place-items: center; height: 46px; border-radius: 7px; overflow: hidden; position: relative;
+  background-size: cover; background-position: center; color: var(--text-3);
+  box-shadow: inset 0 0 0 1px rgba(16, 24, 40, 0.07);
+}
+.bt-transparent {
+  background-color: #fff;
+  background-image: linear-gradient(45deg, #e3e6eb 25%, transparent 25%), linear-gradient(-45deg, #e3e6eb 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #e3e6eb 75%), linear-gradient(-45deg, transparent 75%, #e3e6eb 75%);
+  background-size: 10px 10px; background-position: 0 0, 0 5px, 5px -5px, -5px 0;
+}
+.bt-image { background-color: var(--surface-3); }
+.bt-blur::before {
+  content: ""; position: absolute; inset: -8px; background-image: var(--img); background-size: cover; background-position: center;
+  filter: blur(4px) saturate(1.05);
+}
+.bg-cut-hint {
+  display: flex; align-items: center; gap: 6px; margin-top: 12px; padding: 8px 10px; border-radius: 8px;
+  background: var(--surface-2); color: var(--text-3); font-size: 12px;
+}
+.bg-cut-hint span:first-child { display: inline-flex; color: var(--accent); }
+.bg-opts .sec { border-top: 1px solid var(--border-soft); }
+.field-label.mt { margin-top: 14px; }
+
+.grad-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.grad-chip {
+  height: 40px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(16, 24, 40, 0.08);
+  transition: transform 0.1s, box-shadow 0.12s;
+}
+.grad-chip:hover { transform: translateY(-1px); }
+.grad-chip.on { box-shadow: inset 0 0 0 1px rgba(16, 24, 40, 0.08), 0 0 0 2px #fff, 0 0 0 4px var(--accent); }
+.grad-custom { display: flex; align-items: center; gap: 6px; }
+.grad-custom .gc-arrow { color: var(--text-4); display: inline-flex; }
+.cp { position: relative; flex: 1; display: flex; min-width: 0; }
+.cp-btn {
+  flex: 1; height: 32px; display: flex; align-items: center; gap: 8px; padding: 0 8px; border-radius: 8px;
+  border: 1px solid var(--border-strong); background: #fff; font-size: 12px; color: var(--text-2); font-variant-numeric: tabular-nums;
+}
+.cp-btn:hover { border-color: #b9bfc9; }
+.cp-dot { width: 18px; height: 18px; border-radius: 5px; background: var(--c); box-shadow: inset 0 0 0 1px rgba(16, 24, 40, 0.15); flex: none; }
+.cp-input { position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; }
+
+.scene-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.scene {
+  position: relative; aspect-ratio: 4 / 3; border-radius: 8px; overflow: hidden;
+  background: var(--surface-3); box-shadow: inset 0 0 0 1px rgba(16, 24, 40, 0.08);
+  transition: box-shadow 0.12s, transform 0.1s;
+}
+.scene img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.scene:hover { transform: translateY(-1px); }
+.scene.on { box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--accent); }
+.scene .sc-name {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 4px 3px; font-size: 11px; color: #fff; text-align: center;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.45));
+}
+.scene.upload {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  background: var(--accent-soft); color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent-soft-2);
+  border: 1px dashed #b7c8fb;
+}
+.scene.upload .sc-name { position: static; background: none; color: var(--accent-text); padding: 0; font-size: 12px; }
+.scene.upload:hover { background: #e2eaff; }
+
+.fx-sub { padding: 2px 0 6px 12px; margin: -2px 0 6px; border-left: 2px solid var(--border-soft); }
+.sec.disabled .ctl.toggle { opacity: 0.6; }

@@ -1,0 +1,30 @@
+# Local Python environment and caches
+/.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Models are downloaded with python -m engine.download_models
+/models/
+/engine/device.json
+*.part
+
+# Photos, generated test results, and local backups
+/输出/
+/tests/out/
+/tests/samples/*
+!/tests/samples/README.md
+/_backup*/
+
+# Local credentials and editor / operating-system files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+*.log
+*.pid
